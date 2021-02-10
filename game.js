@@ -180,7 +180,7 @@ Sprite = function () {
     this.vel.x += this.acc.x * delta;
     this.vel.y += this.acc.y * delta;
     this.x += this.vel.x * delta;
-    this.y += this.vel.y * delta;
+_    this.y += this.vel.y * delta;
     this.rot += this.vel.rot * delta;
     if (this.rot > 360) {
       this.rot -= 360;
@@ -421,6 +421,7 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
+	this.delayBeforeBullet = 10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
             SFX.laser();
